@@ -20,11 +20,11 @@ $(document).ready(function(){
       $('#char-count').css('color', 'black');
     }
 
-    if (count <= 0) {
-      $('.tweet-submit').attr('disable', true);
+    if (count < 0) {
+      $('.button').prop('disabled', true);
     }
     else {
-      $('.tweet-submit').attr('disable', false);
+      $('.button').prop('disabled', false);
     }
 
   })
@@ -39,16 +39,12 @@ $(document).ready(function(){
 			newdiv1.find(".tweet-text").text($('.tweet-compose').val());
 
 
-			if ($('.tweet-compose').val().length === 0) {
+			if ($('.tweet-compose').val().length <= 0) {
 				alert("You cannot send a blank tweet!");
-			} else {
+			}
+       else {
 				$('#stream').prepend(newdiv1);
 			};
-
-      $('.tweet-actions').click(function(){
-           $('.action-retweet').eq(0).clone();
-
-      })
 
 		});
 
@@ -59,6 +55,19 @@ $(document).ready(function(){
  			$('.tweet-actions').css('display', 'none')
 
 })
+
+      $('.tweet').on('click', function(){
+        $('.stats').animation({
+             left: '250px',
+             opacity: '0.5',
+             height: '150px',
+             width: '150px',
+             display: 'block'
+         });
+      });
+
+
+
 
 
 });
