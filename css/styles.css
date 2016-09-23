@@ -254,6 +254,7 @@ body {
 			position: relative;
 			clear: both;
 			padding-left: 43px;
+      display: none;
 		}
 			.reply .avatar {
 				position: absolute;

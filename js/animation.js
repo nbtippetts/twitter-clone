@@ -29,6 +29,8 @@ $(document).ready(function(){
 
   })
 
+
+
   $('#tweet-submit').click(function() {
 			var newdiv1 = $('.tweet').eq(0).clone();
 
@@ -46,27 +48,46 @@ $(document).ready(function(){
 				$('#stream').prepend(newdiv1);
 			};
 
+      $('.action-reply').on('click', function(){
+        $(".reply").toggle('Reply');
+      });
+
+      $('.action-retweet').on('click', function(){
+        $(".stats").toggle('.retweets');
+      });
+
+      $('.icon').on('click', function(){
+        $(".action-favorite").css('background-color', 'gold');
+      });
+
+
 		});
 
     $('body').on('mouseenter', '.tweet', function() {
         $('.tweet-actions').css('display', 'block')
  			});
+
 		$('body').on('mouseleave', '.tweet', function() {
  			$('.tweet-actions').css('display', 'none')
 
-})
-
-      $('.tweet').on('click', function(){
-        $('.stats').animation({
-             left: '250px',
-             opacity: '0.5',
-             height: '150px',
-             width: '150px',
-             display: 'block'
-         });
-      });
+    });
 
 
+
+       $('.icon').click(function(){
+         $(".action-favorite").css('background-color', 'gold');
+       });
+
+
+       $('.action-reply').on('click', function(){
+         $(".reply").toggle('Reply');
+       });
+
+
+
+       $('.action-retweet').on('click', function(){
+         $(".stats").toggle('.retweets');
+       });
 
 
 
